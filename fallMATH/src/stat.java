@@ -10,10 +10,15 @@ public class stat <t extends List> {
 		set.addAll(set1);
 		set.addAll(set2);
 	}
+	public static <t extends List> void union(t set1, t set2, t newSet) {
+		newSet.addAll(set1);
+		newSet.addAll(set2);
+	}
 	public void intersection(t set1, t set2) {
 		set.addAll(set1);
 		set.retainAll(set2);
 	}
+	
 	public static <t extends List> void intersection(t set1, t set2, t newSet) {
 		set1.addAll(newSet);
 		newSet.retainAll(set2);
@@ -58,15 +63,8 @@ public class stat <t extends List> {
 				newEvent.add(sampleSpace.get(i));
 			}
 		}
-		
 	}
-	public static <t extends List> void filterOddToEvent(t sampleSpace, t newEvent){
-		for(int i = 0; i < sampleSpace.size(); i++){
-			if(Double.parseDouble((String)sampleSpace.get(i))%2!=0){
-				newEvent.add(sampleSpace.get(i));
-			}
-		}
-	}	
+	
 
 		
 	
